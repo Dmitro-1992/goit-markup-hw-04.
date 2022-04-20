@@ -23,7 +23,7 @@ html {
   box-sizing: border-box;
 }
   *, *::before, *::after{
-    box-sizing: inherit;  
+    box-sizing: border-box;  
   }
 body {
   margin: 0;
@@ -35,9 +35,9 @@ body {
   letter-spacing: 0.02em;
   font-size: 14;
 }
-.container-nav {
-  align-items: center;
-  display: flex;
+.container {
+  /* align-items: center;
+  display: flex; */
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
@@ -46,6 +46,24 @@ body {
   padding-right: 15px;
 
 }
+
+.site-nav{
+display: flex;  
+margin-left: 93px;
+}
+.header-nav{
+  align-items: center;
+  display: flex;
+}
+.text  .list{
+  display: flex;
+  margin-left: auto;
+}
+.nav-flex {
+  align-items: center;
+  display: flex;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -58,11 +76,12 @@ body {
 
    /* outline: 2px solid red;  */
 }
-.header{
-border: 1px solid #ECECEC;
+.page-header{
+/* border: 1px solid #ECECEC; */
 background-color: #FFFFFF;
+border-bottom:1px solid #ECECEC;
 }
-.h1,h2,h3{
+h1, h2, h3, p{
   margin: 0;
   padding: 0;
 }
@@ -72,6 +91,11 @@ background-color: #FFFFFF;
   padding-bottom: 0;
  
 } 
+.section-benefits{
+  padding-top: 94px;
+  /* padding-bottom: 94px; */
+}
+
   /* padding-top: 94; *
 /* .section {
 margin-bottom: 0;
@@ -171,7 +195,7 @@ margin-top: 0%;
 
 /* задачя организации */
 .list-body{
-  padding-top: 94px;
+  /* padding-top: 94px; */
   display: flex;
   
   
@@ -182,14 +206,25 @@ margin-top: 0%;
 .list-body .aside{  
   width: 270px;
 }
-.aside::before{
+/* .aside::before{
   display:inline-block;
   content: "";
   width: 270px;
   height: 120px;
   border-radius: 4px;
    background-color: #F5F4FA;
-}
+} */
+  .pictures-icon {
+   display: flex;
+  background-color: #F5F4FA;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px; 
+  padding: 0;
+  align-items: center;
+  justify-content: center; 
+} 
+
 
 
 /* .site-nav .list{
@@ -216,11 +251,7 @@ margin-top: 0%;
   color: var(--accent-color);
 }
 /* сайт nav */
-.site-nav {
-  display: flex;
-  margin-left: 93px;
 
-}
 .site-nav .link:hover,
 .site-nav .link:focus {
     color: var(--accent-color);
@@ -249,15 +280,8 @@ margin-top: 0%;
  .text .list + .list{
    margin-left: 50px;
  }
- 
+ /* ul для портфолио */
 
-
-    ul {
-    margin: 0;
-    padding: 0;
-    list-style: none
-  } 
- 
  /* задача организации */
 .list-body p {
   margin-top: 0;
@@ -289,7 +313,7 @@ margin-top: 0%;
   font-size: 16px;
   line-height: 1.2;
 }
-.list-aside img{
+ img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -327,6 +351,7 @@ margin-top: 0%;
 }
 .section-list{
   padding-bottom: 94px;
+  padding-top: 94px;
 }
 
   /* чем мы занимаемся  */
@@ -360,6 +385,7 @@ justify-content: space-between;
   margin-bottom: 30px;
   color: var(--address-footer-color);
    width: 696px;
+  font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
     text-transform: uppercase;
@@ -395,6 +421,9 @@ justify-content: space-between;
   line-height: 1.6;
   text-align: center;
 }
+.section-list .section-title{
+  padding: 0;
+}
 
    /* button */
   .button {
@@ -416,18 +445,30 @@ justify-content: space-between;
   .button:focus {
   background-color: #188CE8;
   }
+  
 
 /* ПОРТФОЛИО */
 
-.l
+
 /* кнопки ul */
 .portfolio-title {
   display: none;
+
 }
+/* сброс для всех порт,веб */
+ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+} 
 .title-text{
   background-color: var(--logo-footer-color);
   padding-bottom: 94px;
   padding-top: 94px;
+  display: block;
+   max-width: 100%;
+  height: auto;
 
 }
 .filter-text {
@@ -493,15 +534,15 @@ list-style: none;
 
 }
 
- .test-container {
+ .container {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  /* display: block;
   max-width: 100%;
-  height: auto;
+  height: auto; */
 }  
  /* .test-container{
  display: flex;
@@ -513,20 +554,22 @@ flex-wrap: wrap;
   .projects-list{
   display: flex;
   flex-wrap: wrap; 
+  margin: -15px;
   /* background-color: tomato; */
 } 
 .projects-list-text {
-width: calc((100% - 60px) / 3);
+  margin: 15px;
+/* width: calc((100% - 60px) / 3);
 margin-right: 30px;
- margin-bottom: 30px;
+ margin-bottom: 30px; */
 /* width: 370px; */
 } 
-.projects-list-text:nth-child(3n) {
+/* .projects-list-text:nth-child(3n) {
   margin-right: 0;
 } 
  .projects-list-item:nth-last-child(-n + 3) {
   margin-bottom: 0;
-}
+} */
 .projects-list-text .main{
   padding: 20px 24px;
   border-bottom: 1px solid #eeeeee;
